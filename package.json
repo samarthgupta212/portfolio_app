@@ -16,10 +16,7 @@
     "mysql2": "^2.1.0",
     "pg": "^7.18.1",
     "sequelize": "^5.21.4",
-    "sequelize-cli": "^5.5.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "sequelize-cli": "^5.5.1",
     "babel-core": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -27,6 +24,9 @@
     "nodemon": "^1.17.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   },
   "scripts": {
     "start:dev": "nodemon ./bin/www",
