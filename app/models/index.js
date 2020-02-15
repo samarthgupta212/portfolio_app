@@ -22,7 +22,7 @@ if (process.env.HEROKU_POSTGRESQL_GRAY_URL) {
     logging:  true //false
   })
 } else {
-  var sequelize = new Sequelize(config.database, config.username, config.password, config);
+   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
 fs
