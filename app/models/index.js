@@ -16,13 +16,16 @@ Sequelize.useCLS(namespace);
 let sequelize;
 if (process.env.HEROKU_POSTGRESQL_GRAY_URL) {
   // the application is executed on Heroku ... use the postgres database
+  console.log("###", process.env.HEROKU_POSTGRESQL_GRAY_URL)
+  console.log("@@@", process.env.DATABASE_URL)
   sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_GRAY_URL, {
     dialect:  'postgres',
     protocol: 'postgres',
     logging:  true //false
   })
 } else {
-   sequelize = new Sequelize(config.database, config.username, config.password, config);
+  console.log("%%%", process.env.HEROKU_POSTGRESQL_GRAY_URL, process.env.DATABASE_URL, env)
+  sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
 fs
