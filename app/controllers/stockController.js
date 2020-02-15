@@ -1,6 +1,7 @@
 import { Responder } from '../lib';
 import { Stock } from "../models";
 
+// this function take name and ticker for given stock and puts it in DB
 const create = async (req, res) => {
   try {
     const { name, ticker } = req.body;
@@ -19,6 +20,7 @@ const create = async (req, res) => {
   }
 };
 
+// Gets all stocks
 const fetch = async (req, res) => {
   try {
     const stocks = await Stock.findAll({});

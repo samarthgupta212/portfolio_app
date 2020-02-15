@@ -3,6 +3,8 @@ import { Responder } from '../lib';
 import { Portfolio, PortfolioTrade } from '../models';
 import { createTrade } from './concerns/tradeUtil';
 
+// this updates portfolio for given portfolioId
+// Expected body => qty = quantity of stock sold/bought, price = price at which stock is bought/sold, type = BUY/SELL
 const update = async (req, res) => {
   try {
     const { portfolioId } = req.params
@@ -20,6 +22,8 @@ const update = async (req, res) => {
   }
 }
 
+// Sells all the shares for given portfolioId
+// Expected Body => price = price at which stock needs to be sold
 const remove = async (req, res) => {
   try {
     const { portfolioId } = req.params;
@@ -38,6 +42,7 @@ const remove = async (req, res) => {
   }
 }
 
+// fetch returns given protfolio with trades for given portfolioId
 const fetch = async (req, res) => {
   try {
     const { portfolioId } = req.params;
@@ -53,6 +58,7 @@ const fetch = async (req, res) => {
   }
 };
 
+// fetchAll returns all portfolios
 const fetchAll = async (req, res) => {
   try {
     const portfolios = await Portfolio.findAll({});
@@ -63,6 +69,7 @@ const fetchAll = async (req, res) => {
   }
 };
 
+// fetchReturns given returns
 const fetchReturns = async (req, res) => {
   try {
     const portfolios = await Portfolio.findAll({});
