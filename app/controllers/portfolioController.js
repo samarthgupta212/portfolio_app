@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { Responder } from '../lib';
-import { Portfolio, Stock, PortfolioTrade } from '../models';
+import { Portfolio, PortfolioTrade } from '../models';
 import { createTrade } from './concerns/tradeUtil';
 
 const update = async (req, res) => {

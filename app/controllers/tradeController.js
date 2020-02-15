@@ -1,5 +1,5 @@
 import { Responder } from '../lib';
-import { Stock, Trade, Portfolio, PortfolioTrade } from "../models";
+import { Stock } from "../models";
 import { createTrade } from './concerns/tradeUtil';
 
 const create = async (req, res) => {

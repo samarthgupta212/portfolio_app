@@ -1,6 +1,6 @@
 import { sequelize } from '../../models';
 import { updatePortfolioOnStockBuy, updatePortfolioOnStockSell } from './portfolioUtil';
-import { Stock, Trade, Portfolio, PortfolioTrade } from "../../models";
+import { Trade } from "../../models";
 
 const createTrade = async (stockId, price, qty, type) => {
   await sequelize.transaction(async () => {

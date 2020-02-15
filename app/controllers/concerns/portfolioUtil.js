@@ -1,4 +1,4 @@
-import { Stock, Trade, Portfolio, PortfolioTrade } from "../../models";
+import { Portfolio, PortfolioTrade } from "../../models";
 
 const updatePortfolioOnStockBuy = async (tradeId, stockId, qty, price) => {
   let portfolio = await Portfolio.findOne({
@@ -53,7 +53,7 @@ const updatePortfolioOnStockSell = async (tradeId, stockId, qty, price) => {
     newAverageBuyPrice = prevAverageBuyPrice;
   portfolio.qty = newQty;
 
-  // Remove portfolio when qty = 0 
+  // Remove portfolio when qty = 0
   if (!portfolio.qty) {
     await portfolio.destroy();
     return;
