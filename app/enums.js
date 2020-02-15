@@ -1,0 +1,4 @@
+exports.tradeValues = [
+  'BUY',
+  'SELL'
+];
