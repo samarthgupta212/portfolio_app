@@ -30,7 +30,7 @@
   "scripts": {
     "start:dev": "nodemon ./bin/www",
     "dbmigrate": "sequelize db:migrate",
-    "start": "NODE_ENV=production npm install && npm run dbmigrate  && node ./bin/www"
+    "start": "NODE_ENV=production npm install && npm run dbmigrate && sequelize db:seed:all && node ./bin/www"
   },
   "author": "",
   "license": "ISC"
