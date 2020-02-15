@@ -7,7 +7,8 @@ const initTradeRoutes = () => {
   const tradeRoutes = express.Router();
 
   tradeRoutes.post('/', validate(validation.trade.create), tradeController.create);
-
+  tradeRoutes.get('/', tradeController.fetchAll);
+  
   return tradeRoutes;
 };
 

@@ -47,8 +47,8 @@ const updatePortfolioOnStockSell = async (tradeId, stockId, qty, price) => {
     }
   });
 
-  if (!portfolio) throw new Error("Portfolio was not there for given stock")
-  if (portfolio.qty < qty) throw new Error("Cannot sell more qty than u can bought");
+  if (!portfolio) throw new Error("Cannot sell given stock")
+  if (portfolio.qty < qty) throw new Error("Cannot sell more qty than you can bought");
   let prevQty = portfolio.qty, newQty = portfolio.qty - qty, prevAverageBuyPrice = portfolio.avgBuyPrice,
     newAverageBuyPrice = prevAverageBuyPrice;
   portfolio.qty = newQty;

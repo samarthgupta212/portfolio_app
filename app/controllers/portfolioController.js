@@ -67,7 +67,9 @@ const fetch = async (req, res) => {
 // fetchAll returns all portfolios
 const fetchAll = async (req, res) => {
   try {
-    const portfolios = await Portfolio.findAll({});
+    const portfolios = await Portfolio.findAll({
+      order: [['createdAt', 'DESC']]
+    });
 
     return Responder.success(res, { success: true, portfolios });
   } catch (error) {

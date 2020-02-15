@@ -1,5 +1,5 @@
 import { Responder } from '../lib';
-import { Stock } from "../models";
+import { Stock, Trade } from "../models";
 import { createTrade } from './concerns/tradeUtil';
 
 // this creates trade in the system and creates/updates portfolio for given stock
@@ -22,6 +22,19 @@ const create = async (req, res) => {
   }
 };
 
+const fetchAll = async (req, res) => {
+  try {
+    const trades = await Trade.findAll({
+      order: [['createdAt', 'DESC']]
+    });
+
+    return Responder.success(res, { success: true, trades });
+  } catch (error) {
+    return Responder.operationFailed(res, { error, status: 400 });
+  }
+};
+
 module.exports = {
-  create
+  create,
+  fetchAll,
 }
