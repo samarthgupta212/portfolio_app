@@ -14,10 +14,15 @@ const namespace = cls.createNamespace('my-very-own-namespace');
 Sequelize.useCLS(namespace);
 
 let sequelize;
-if (config.use_env_variable) {
-  sequelize = new Sequelize(process.env[config.use_env_variable], config);
+if (process.env.HEROKU_POSTGRESQL_GRAY_URL) {
+  // the application is executed on Heroku ... use the postgres database
+  sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_GRAY_URL, {
+    dialect:  'postgres',
+    protocol: 'postgres',
+    logging:  true //false
+  })
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
 fs
