@@ -12,10 +12,5 @@ module.exports = {
       useUTC: false, // for reading from database
     },
     timezone: '+05:30', // for writing to database
-  },
-  production: {
-    use_env_variable: 'DATABASE_URL',
-    dialect: 'postgres',
-    ssl: true
   }
 };

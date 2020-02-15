@@ -16,15 +16,12 @@ Sequelize.useCLS(namespace);
 let sequelize;
 if (process.env.DATABASE_URL) {
   // the application is executed on Heroku ... use the postgres database
-  console.log("###", process.env.DATABASE_URL)
-  console.log("@@@", process.env.DATABASE_URL)
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect:  'postgres',
     protocol: 'postgres',
     logging:  true //false
   })
 } else {
-  console.log("%%%", process.env.HEROKU_POSTGRESQL_GRAY_URL, process.env.DATABASE_URL, env)
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
