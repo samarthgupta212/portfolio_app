@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       tradeId: {
-        type: DataTypes.INTEGER,
+        type: Sequelize.INTEGER,
       },
       prevQty: {
         type: Sequelize.INTEGER
