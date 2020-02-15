@@ -48,7 +48,13 @@ const fetch = async (req, res) => {
     const { portfolioId } = req.params;
     const portfolio = await Portfolio.findOne({
       where: {id: portfolioId},
-      include: { model: PortfolioTrade, as: 'portfolioTrades', attributes: ['portfolioId', 'price', 'type', 'qty']},
+      include: {
+        model: PortfolioTrade, as: 'portfolioTrades',
+        attributes: ['portfolioId', 'price', 'type', 'qty', 'createdAt'],
+      },
+      order: [
+       [{ model: PortfolioTrade, as: 'portfolioTrades' }, 'createdAt', 'DESC']
+      ],
     });
     if (!portfolio) throw new Error("Portfolio Stock not found")
 
