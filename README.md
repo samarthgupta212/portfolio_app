@@ -3,7 +3,7 @@
 # Using PostgresDB with Nodejs
 
 # Stock Routes
-  POST /api/stock => Expected body = {name, ticker} => Creates Stock
+  POST /api/stock => Expected body = {name, ticker} => Creates Stock<br>
   GET /api/stock => Returns all stocks
 
 # Trade Routes
