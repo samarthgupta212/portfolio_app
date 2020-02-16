@@ -3,11 +3,12 @@
 # Using PostgresDB with Nodejs
 
 # Stock Routes
-  POST /api/stock => Expected body = {name, ticker} => Creates Stock
-  GET /api/stock => Returns all stocks
+  POST /api/stock => Expected body = {name, ticker} => Creates Stock\n
+  GET /api/stock => Returns all stocks\n
 
 # Trade Routes
-  POST /api/trade => Expected body = {price, qty, stockId, type}  where type = "BUY" or "SELL" => Creates trade
+  POST /api/trade => Expected body = {price, qty, stockId, type}  where type = "BUY" or "SELL" => Creates trade\n
+  GET /api/trade => Returns all trades\n
 
 # Portfolio Routes
   PUT /api/portfolio/:portfolioId =>  Expected params = (portfolioId = int), Expected body =  { price, qty, type } where type = "BUY" or "SELL" => Updates Portfolio by creating trade
